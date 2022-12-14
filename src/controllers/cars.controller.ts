@@ -30,6 +30,7 @@ class CarsController {
   public createCar = async (req: Request, res: Response, next: NextFunction) => {
     try {
       const userData: CreateCarDto = req.body;
+      console.log('userData: ', userData);
       const createCarData: Car = await this.carsService.createCar(userData);
 
       res.status(201).json({ data: createCarData, message: 'created' });
